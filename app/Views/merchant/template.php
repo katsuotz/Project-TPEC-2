@@ -23,12 +23,12 @@
 
     <!-- STYLE CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" />
-    <link href="/assets/css/dark-style.css" rel="stylesheet" />
-    <link href="/assets/css/transparent-style.css" rel="stylesheet">
-    <link href="/assets/css/skin-modes.css" rel="stylesheet" />
+<!--    <link href="/assets/css/dark-style.css" rel="stylesheet" />-->
+<!--    <link href="/assets/css/transparent-style.css" rel="stylesheet">-->
+<!--    <link href="/assets/css/skin-modes.css" rel="stylesheet" />-->
 
     <!--- FONT-ICONS CSS -->
-    <link href="/assets/css/icons.css" rel="stylesheet" />
+<!--    <link href="/assets/css/icons.css" rel="stylesheet" />-->
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="/assets/colors/color1.css" />
@@ -53,7 +53,7 @@
                 <div class="d-flex">
                     <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                     <!-- sidebar-toggle-->
-                    <a class="logo-horizontal " href="index.html">
+                    <a class="logo-horizontal " href="/merchant">
                         <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
                         <img src="/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
                              alt="logo">
@@ -88,12 +88,12 @@
                                         </div>
                                     </div>
                                     <!-- COUNTRY -->
-                                    <div class="d-flex country">
-                                        <a class="nav-link icon theme-layout nav-link-bg layout-setting">
-                                            <span class="dark-layout"><i class="fe fe-moon"></i></span>
-                                            <span class="light-layout"><i class="fe fe-sun"></i></span>
-                                        </a>
-                                    </div>
+<!--                                    <div class="d-flex country">-->
+<!--                                        <a class="nav-link icon theme-layout nav-link-bg layout-setting">-->
+<!--                                            <span class="dark-layout"><i class="fe fe-moon"></i></span>-->
+<!--                                            <span class="light-layout"><i class="fe fe-sun"></i></span>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
                                     <!-- Theme-Layout -->
                                     <div class="dropdown  d-flex notifications">
                                         <a class="nav-link icon" data-bs-toggle="dropdown"><i
@@ -236,7 +236,7 @@
 </div>
 
 <!-- BACK-TO-TOP -->
-<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+<!--<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>-->
 
 <!-- JQUERY JS -->
 <script src="/assets/js/jquery.min.js"></script>
@@ -257,8 +257,8 @@
 <script src="/assets/js/table-data.js"></script>
 
 <!-- Perfect SCROLLBAR JS-->
-<script src="/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
-<script src="/assets/plugins/p-scroll/pscroll.js"></script>
+<!--<script src="/assets/plugins/p-scroll/perfect-scrollbar.js"></script>-->
+<!--<script src="/assets/plugins/p-scroll/pscroll.js"></script>-->
 
 <!-- Color Theme js -->
 <script src="/assets/js/themeColors.js"></script>

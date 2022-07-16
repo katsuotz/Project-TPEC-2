@@ -23,12 +23,12 @@
 
     <!-- STYLE CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" />
-    <link href="/assets/css/dark-style.css" rel="stylesheet" />
-    <link href="/assets/css/transparent-style.css" rel="stylesheet">
-    <link href="/assets/css/skin-modes.css" rel="stylesheet" />
+<!--    <link href="/assets/css/dark-style.css" rel="stylesheet" />-->
+<!--    <link href="/assets/css/transparent-style.css" rel="stylesheet">-->
+<!--    <link href="/assets/css/skin-modes.css" rel="stylesheet" />-->
 
     <!--- FONT-ICONS CSS -->
-    <link href="/assets/css/icons.css" rel="stylesheet" />
+<!--    <link href="/assets/css/icons.css" rel="stylesheet" />-->
 
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="/assets/colors/color1.css" />
@@ -81,10 +81,10 @@
 <script src="/assets/js/show-password.min.js"></script>
 
 <!-- GENERATE OTP JS -->
-<script src="/assets/js/generate-otp.js"></script>
+<!--<script src="/assets/js/generate-otp.js"></script>-->
 
 <!-- Perfect SCROLLBAR JS-->
-<script src="/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+<!--<script src="/assets/plugins/p-scroll/perfect-scrollbar.js"></script>-->
 
 <!-- Color Theme js -->
 <script src="/assets/js/themeColors.js"></script>

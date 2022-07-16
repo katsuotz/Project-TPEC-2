@@ -2,14 +2,29 @@
 
 namespace App\Controllers;
 
+use App\Models\Category;
+use App\Models\Service;
+
 class Home extends BaseController
 {
-    public function index()
+    protected $service, $category;
+
+    public function __construct()
     {
-        return view('index');
+        $this->service = new Service();
+        $this->category = new Category();
     }
 
-    public function merchant () {
+    public function index()
+    {
+        return view('index', [
+            'services' => $this->service->orderBy('created_at', 'desc')->findAll(),
+            'categories' => $this->category->findAll(),
+        ]);
+    }
+
+    public function merchant()
+    {
         return view('merchant/index');
     }
 }

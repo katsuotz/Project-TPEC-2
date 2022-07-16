@@ -5,8 +5,7 @@
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar"
                href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
-            <a class="logo-horizontal " href="index.html">
-                <img src="/assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+            <a class="logo-horizontal " href="/">
                 <img src="/assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
                      alt="logo">
             </a>
@@ -46,9 +45,8 @@
             <div class="container">
                 <div class="row gutters-0">
                     <div class="main-sidemenu navbar navbar-expand px-0 gap-5">
-                        <a class="navbar-brand ps-0 d-none d-lg-block" href="index.html">
+                        <a class="navbar-brand ps-0 d-none d-lg-block" href="/">
                             <img alt="" class="logo-2" src="/assets/images/brand/logo-3.png">
-                            <img src="/assets/images/brand/logo.png" class="logo-3" alt="logo">
                         </a>
                         <div class="side-menu flex-grow-1">
                             <input type="text" class="form-control dropdown-toggle" id="typehead" placeholder="Cari Servis" autocomplete="off" data-bs-toggle="dropdown" aria-expanded="false">
