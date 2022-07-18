@@ -2,10 +2,7 @@
 <?= $this->section('content') ?>
 
     <div class="page-header mt-0">
-        <h1 class="page-title">Servis Terbaru</h1>
-        <div>
-            <a href="/services">Lihat Servis Lainnya</a>
-        </div>
+        <h1 class="page-title">List Servis</h1>
     </div>
 
     <div class="row">

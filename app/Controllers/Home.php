@@ -18,7 +18,7 @@ class Home extends BaseController
     public function index()
     {
         return view('index', [
-            'services' => $this->service->orderBy('created_at', 'desc')->findAll(),
+            'services' => $this->service->joinCategory()->orderBy('created_at', 'desc')->findAll(),
             'categories' => $this->category->findAll(),
         ]);
     }

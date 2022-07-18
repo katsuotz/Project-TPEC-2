@@ -25,4 +25,16 @@ class Service extends Model
     {
         return $this->join('categories', 'categories.category_id = services.category_id');
     }
+
+    public function whereCategory($category = null)
+    {
+        if ($category) return $this->where('category_slug', $category);
+        return $this;
+    }
+
+    public function search($search = null)
+    {
+        if ($search) return $this->like('title', $search);
+        return $this;
+    }
 }

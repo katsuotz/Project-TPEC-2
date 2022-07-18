@@ -32,6 +32,8 @@
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="/assets/colors/color1.css"/>
 
+    <link href="/assets/css/custom.css" rel="stylesheet"/>
+
 </head>
 
 <body class="app ltr landing-page horizontal">

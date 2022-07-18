@@ -49,7 +49,9 @@
                             <img alt="" class="logo-2" src="/assets/images/brand/logo-3.png">
                         </a>
                         <div class="side-menu flex-grow-1">
-                            <input type="text" class="form-control dropdown-toggle" id="typehead" placeholder="Cari Servis" autocomplete="off" data-bs-toggle="dropdown" aria-expanded="false">
+                            <form class="w-100" action="/services">
+                                <input value="<?= @$search ?>" name="search" type="search" class="form-control dropdown-toggle" id="typehead" placeholder="Cari Servis" autocomplete="off" data-bs-toggle="dropdown" aria-expanded="false">
+                            </form>
                         </div>
                         <div class="header-nav-right d-none d-lg-flex">
                             <?php if (!session()->get('user')): ?>

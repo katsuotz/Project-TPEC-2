@@ -18,6 +18,12 @@ class CategorySeeder extends Seeder
         ];
 
         $category = new Category();
-        $category->insertBatch($data);
+        foreach ($data as $key => $datum) {
+            $category->save([
+                'category_id' => $key + 1,
+                'category_name' => $datum['category_name'],
+                'category_slug' => url_title($datum['category_name'], '-', true),
+            ]);
+        }
     }
 }

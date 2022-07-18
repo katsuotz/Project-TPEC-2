@@ -10,7 +10,7 @@ class Category extends Model
     protected $protectFields = true;
     protected $primaryKey = 'category_id';
     protected $allowedFields = [
-        'category_name',
+        'category_name', 'category_slug'
     ];
 
     // Dates
