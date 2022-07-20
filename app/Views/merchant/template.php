@@ -33,6 +33,8 @@
     <!-- COLOR SKIN CSS -->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="/assets/colors/color1.css" />
 
+    <link href="/assets/css/custom.css" rel="stylesheet"/>
+
 </head>
 
 <body class="app sidebar-mini ltr light-mode">
@@ -269,6 +271,7 @@
 <!-- CUSTOM JS -->
 <script src="/assets/js/custom.js"></script>
 
+<?= $this->renderSection('custom-js') ?>
 
 </body>
 

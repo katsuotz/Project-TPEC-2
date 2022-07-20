@@ -18,7 +18,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Basic Datatable</h3>
+<!--                    <h3 class="card-title">Basic Datatable</h3>-->
                     <div class="card-options">
                         <a href="/merchant/services/new" class="btn btn-primary btn-sm">Tambah Servis</a>
                     </div>

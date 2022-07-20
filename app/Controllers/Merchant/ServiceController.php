@@ -23,7 +23,7 @@ class ServiceController extends ResourceController
      */
     public function index()
     {
-        return view('merchant/service/index', [
+        return view('merchant/services/index', [
             'services' => $this->service->joinCategory()->orderBy('created_at', 'desc')->findAll(),
         ]);
     }
@@ -45,7 +45,7 @@ class ServiceController extends ResourceController
      */
     public function new()
     {
-        return view('merchant/service/form', [
+        return view('merchant/services/form', [
             'categories' => $this->category->findAll(),
             'validation' => \Config\Services::validation(),
         ]);
@@ -106,7 +106,7 @@ class ServiceController extends ResourceController
      */
     public function edit($id = null)
     {
-        return view('merchant/service/form', [
+        return view('merchant/services/form', [
             'categories' => $this->category->findAll(),
             'service' => $this->service->find($id),
             'validation' => \Config\Services::validation(),
@@ -130,9 +130,7 @@ class ServiceController extends ResourceController
             'category_id' => 'required',
         ]);
 
-        if (!$validate) {
-            return redirect()->back()->withInput();
-        }
+        if (!$validate) return redirect()->back()->withInput();
 
         $slug = url_title($this->request->getVar('title'), '-', true);
 

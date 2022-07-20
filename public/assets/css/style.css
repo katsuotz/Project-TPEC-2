@@ -3,7 +3,7 @@
 [Master Stylesheet]
 
 Project        :   sash – Bootstrap 5  Admin & Dashboard Template
-Copyright      :   Spruko Technologies Private Limited 
+Copyright      :   Spruko Technologies Private Limited
 Author         :   Spruko
 Author URL     :   https://themeforest.net/user/spruko
 Support	       :   support@spruko.com
@@ -145,7 +145,7 @@ License        :   Licensed under ThemeForest License
 */
 /* ######## FONT ######## */
 /*-------- Bootstrap Framework -------*/
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
 
 /* ######## BOOTSTRAP ######## */
 /*Color variables*/
@@ -236,8 +236,8 @@ section {
 
 body {
     margin: 0;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     color: #282f53;
@@ -4789,7 +4789,7 @@ input[type=button].btn-block {
     border: inherit !important;
     background-clip: border-box;
     border-radius: 7px;
-    box-shadow: 0 4px 25px 0 rgba(168, 180, 208, 0.1);
+    box-shadow: 0 1px 6px 0 rgba(49,53,59,0.12);
 }
 
 .card > hr {
@@ -68210,7 +68210,7 @@ ul {
 }
 
 .main-chat-body .media.flex-row-reverse .main-msg-wrapper {
-    background-color: var(--primary02);
+    background-color: rgba(108, 95, 252, .2);
     color: #000;
     position: relative;
     border-top-right-radius: 0;

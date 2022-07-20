@@ -19,15 +19,25 @@
                     <h3>Main</h3>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="index.html"><i
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="/merchant"><i
                             class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
-                <li>
-                    <a class="side-menu__item has-link" href="landing-page.html" target="_blank"><i
-                            class="side-menu__icon fe fe-zap"></i><span
-                            class="side-menu__label">Landing Page</span><span class="badge bg-green br-5 side-badge blink-text pb-1">New</span></a>
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="/merchant/services"><i
+                            class="side-menu__icon fe fe-shopping-bag"></i><span
+                            class="side-menu__label">Servis</span></a>
                 </li>
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="/merchant/orders"><i
+                            class="side-menu__icon fe fe-shopping-cart"></i><span
+                            class="side-menu__label">Pesanan</span></a>
+                </li>
+<!--                <li>-->
+<!--                    <a class="side-menu__item has-link" href="landing-page.html" target="_blank"><i-->
+<!--                            class="side-menu__icon fe fe-zap"></i><span-->
+<!--                            class="side-menu__label">Landing Page</span><span class="badge bg-green br-5 side-badge blink-text pb-1">New</span></a>-->
+<!--                </li>-->
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
                         <i class="side-menu__icon fe fe-cpu"></i>

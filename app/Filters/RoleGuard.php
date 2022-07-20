@@ -19,7 +19,7 @@ class RoleGuard implements FilterInterface
      * redirects, etc.
      *
      * @param RequestInterface $request
-     * @param array|null       $arguments
+     * @param array|null $arguments
      *
      * @return mixed
      */
@@ -28,7 +28,8 @@ class RoleGuard implements FilterInterface
         if ($arguments[0]) {
             $role = $arguments[0];
             $user = session()->get('user');
-            if (!$user || $user['role'] != $role) return redirect()->to('/');
+            if (!$user) return redirect()->to('/login');
+            if ($user['role'] != $role) return redirect()->to('/');
         }
     }
 
@@ -38,9 +39,9 @@ class RoleGuard implements FilterInterface
      * to stop execution of other after filters, short of
      * throwing an Exception or Error.
      *
-     * @param RequestInterface  $request
+     * @param RequestInterface $request
      * @param ResponseInterface $response
-     * @param array|null        $arguments
+     * @param array|null $arguments
      *
      * @return mixed
      */

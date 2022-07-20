@@ -37,4 +37,9 @@ class Service extends Model
         if ($search) return $this->like('title', $search);
         return $this;
     }
+
+    public function whereSlug($slug = null)
+    {
+        return $this->where('slug', $slug);
+    }
 }

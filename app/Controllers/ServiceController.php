@@ -16,9 +16,8 @@ class ServiceController extends BaseController
         $this->category = new Category();
     }
 
-    public function index()
+    public function index($category = null)
     {
-        $category = $this->request->getGet('category');
         $search = $this->request->getGet('search');
         return view('services/index', [
             'services' => $this->service
@@ -31,8 +30,11 @@ class ServiceController extends BaseController
         ]);
     }
 
-    public function show()
+    public function show($category, $slug)
     {
-        return view('services/index');
+        return view('services/show', [
+            'service' => $this->service->whereSlug($slug)->joinCategory()->first(),
+            'validation' => \Config\Services::validation(),
+        ]);
     }
 }

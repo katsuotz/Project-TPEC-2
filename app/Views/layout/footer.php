@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="top-footer">
                         <div class="row">
-                            <div class="col-lg-4 col-sm-12 col-md-12 reveal revealleft">
+                            <div class="col-lg-4 col-sm-12 col-md-12">
                                 <h6>About</h6>
                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                                     doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
@@ -17,7 +17,7 @@
                                     velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat .
                                 </p>
                             </div>
-                            <div class="col-lg-2 col-sm-6 col-md-4 reveal revealleft">
+                            <div class="col-lg-2 col-sm-6 col-md-4">
                                 <h6>Pages</h6>
                                 <ul class="list-unstyled mb-5 mb-lg-0">
                                     <li><a href="index.html">Dashboard</a></li>
@@ -28,7 +28,7 @@
                                     <li><a href="file-attachments.html">Other Pages</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-2 col-sm-6 col-md-4 reveal revealleft">
+                            <div class="col-lg-2 col-sm-6 col-md-4">
                                 <h6>Information</h6>
                                 <ul class="list-unstyled mb-5 mb-lg-0">
                                     <li><a href="about.html">Our Team</a></li>
@@ -39,7 +39,7 @@
                                     <li><a href="terms.html">Terms and Services</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-4 col-sm-12 col-md-4 reveal revealleft">
+                            <div class="col-lg-4 col-sm-12 col-md-4">
                                 <div class="">
                                     <a href="index.html"><img loading="lazy" alt="" class="logo-2 mb-3"
                                                               src="/assets/images/brand/logo-3.png"></a>

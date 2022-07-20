@@ -22,9 +22,9 @@
                         <!-- SEARCH -->
                         <div class="header-nav-right p-5">
                             <?php if (!session()->get('user')): ?>
-                            <a href="/register"
-                               class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto">Register</a>
-                            <a href="/login" class="btn ripple btn-min w-sm btn-primary me-2 my-auto">Login</a>
+                                <a href="/register"
+                                   class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto">Register</a>
+                                <a href="/login" class="btn ripple btn-min w-sm btn-primary me-2 my-auto">Login</a>
                             <?php else: ?>
                                 <a href="/logout">Logout</a>
                             <?php endif ?>
@@ -55,10 +55,10 @@
                         </div>
                         <div class="header-nav-right d-none d-lg-flex">
                             <?php if (!session()->get('user')): ?>
-                            <a href="/register"
-                               class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto d-lg-none d-xl-block d-block">Register</a>
-                            <a href="/login"
-                               class="btn ripple btn-min w-sm btn-primary me-2 my-auto d-lg-none d-xl-block d-block">Login</a>
+                                <a href="/register"
+                                   class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto d-lg-none d-xl-block d-block">Register</a>
+                                <a href="/login"
+                                   class="btn ripple btn-min w-sm btn-primary me-2 my-auto d-lg-none d-xl-block d-block">Login</a>
                             <?php else: ?>
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item dropdown">
@@ -66,7 +66,11 @@
                                             <?= session()->get('user')['name'] ?>
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <?php if (session()->get('user')['role'] == 'customer'): ?>
+                                                <li><a class="dropdown-item" href="/my-order">Pesanan Saya</a></li>
+                                            <?php elseif (session()->get('user')['role'] == 'merchant'): ?>
                                             <li><a class="dropdown-item" href="/merchant">Toko Saya</a></li>
+                                            <?php endif ?>
                                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                                         </ul>
                                     </li>

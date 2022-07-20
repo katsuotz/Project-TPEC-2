@@ -36,11 +36,9 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->resource('services', [
-    'controller' => 'ServiceController',
-    'only' => ['index', 'show'],
-]);
-$routes->get('upload', 'Upload::index');          // Add this line.
+$routes->get('/services', 'ServiceController::index');
+$routes->get('/services/(:segment)', 'ServiceController::index/$1');
+$routes->get('/services/(:segment)/(:segment)', 'ServiceController::show/$1/$2');
 
 $routes->group('', ['filter' => 'authguard:false'], function ($routes) {
     $routes->get('/login', 'AuthController::login');
@@ -50,12 +48,27 @@ $routes->group('', ['filter' => 'authguard:false'], function ($routes) {
 
 $routes->group('', ['filter' => 'authguard:true'], function ($routes) {
     $routes->get('/logout', 'AuthController::logout');
+});
 
-    // Merchant
-    $routes->get('/merchant', 'Home::merchant');
-    $routes->group('merchant', ['filter' => 'roleguard:merchant'], function ($routes) {
-        $routes->resource('services', ['controller' => 'Merchant\ServiceController']);
-    });
+
+// Merchant
+$routes->group('', ['filter' => 'roleguard:merchant'], function ($routes) {
+    $routes->get('orders/(:segment)', 'OrderController::orderDetail/$1');
+    $routes->post('orders/(:segment)/chat', 'OrderController::chat/$1');
+});
+
+$routes->group('merchant', ['filter' => 'roleguard:merchant'], function ($routes) {
+    $routes->get('', 'Home::merchant');
+    $routes->resource('services', ['controller' => 'Merchant\ServiceController']);
+    $routes->patch('orders/(:num)/process', 'Merchant\OrderController::process/$1');
+    $routes->resource('orders', ['controller' => 'Merchant\OrderController'], ['only' => ['index', 'show', 'edit', 'update']]);
+});
+
+//   Customer
+$routes->group('', ['filter' => 'roleguard:customer'], function ($routes) {
+    $routes->post('services/(:segment)/(:segment)', 'OrderController::doOrder/$1/$2');
+    $routes->get('my-order', 'OrderController::myOrder');
+    $routes->get('my-order/(:segment)', 'OrderController::orderDetail/$1');
 });
 
 /*

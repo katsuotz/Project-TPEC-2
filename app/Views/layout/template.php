@@ -58,6 +58,18 @@
                 <div class="main-container">
 
                     <div class="container py-6">
+
+                        <?php if (session()->getFlashdata('success')) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?= session()->getFlashdata('success'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (session()->getFlashdata('error')) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?= session()->getFlashdata('error'); ?>
+                            </div>
+                        <?php endif; ?>
+
                         <?= $this->renderSection('content') ?>
                     </div>
 
@@ -103,6 +115,8 @@
 
 <!-- CUSTOM JS -->
 <script src="/assets/js/landing.js"></script>
+
+<?= $this->renderSection('custom-js') ?>
 
 </body>
 
