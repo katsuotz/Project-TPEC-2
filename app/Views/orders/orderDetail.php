@@ -34,6 +34,11 @@
             <div class="panel-body tabs-menu-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="detail">
+                        <?php if (session()->get('user')['role'] == 'merchant'): ?>
+                            <div class="text-sm-right">
+                                <a href="/orders/<?= $order['order_id'] ?>/edit" class="btn btn-primary mb-4">Ubah Rincian / Tambah Layanan</a>
+                            </div>
+                        <?php endif ?>
                         <?php foreach ($services as $key => $service): ?>
                             <div class="row">
                                 <div class="col-xl-4">

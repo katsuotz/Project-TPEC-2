@@ -54,7 +54,10 @@ $routes->group('', ['filter' => 'authguard:true'], function ($routes) {
 // Merchant
 $routes->group('', ['filter' => 'roleguard:merchant'], function ($routes) {
     $routes->get('orders/(:segment)', 'OrderController::orderDetail/$1');
+    $routes->get('orders/(:segment)/edit', 'OrderController::edit/$1');
     $routes->post('orders/(:segment)/chat', 'OrderController::chat/$1');
+    $routes->post('orders/(:segment)/add-service', 'OrderController::addService/$1');
+    $routes->put('orders/(:segment)/update-services', 'OrderController::updateServices/$1');
 });
 
 $routes->group('merchant', ['filter' => 'roleguard:merchant'], function ($routes) {

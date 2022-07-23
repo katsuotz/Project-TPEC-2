@@ -137,4 +137,86 @@ class OrderController extends BaseController
 
         return redirect()->to('my-order')->with('success', 'Berhasil melakukan order');
     }
+
+    public function edit($id)
+    {
+        $user = session()->get('user');
+        $userID = $user['user_id'];
+        $order = $this->order->joinMerchant()->find($id);
+
+        if ($order['customer_id'] != $userID && $order['merchant_id'] != $userID) {
+            return redirect()->to('/my-order');
+        }
+
+        $services = $this->orderService->where('order_id', $id)->orderBy('created_at')->findAll();
+
+        $category = $this->orderService->getCategory($services[0]['order_service_id']);
+
+        return view('orders/edit', [
+            'order' => $order,
+            'services' => $services,
+            'category' => $category,
+            'customer' => $user['role'] == 'customer' ? $user : $this->user->find($order['merchant_id']),
+            'merchant' => $user['role'] == 'merchant' ? $user : $this->user->find($order['customer_id']),
+            'validation' => \Config\Services::validation(),
+        ]);
+    }
+
+    public function addService($id)
+    {
+        $validation = \Config\Services::validation();
+
+        $validate = $this->validate([
+            'title' => 'required',
+            'additional_description' => 'required',
+            'additional_price' => 'required',
+            'order_image' => 'uploaded[order_image]',
+        ]);
+
+        $request = $this->request->getPost();
+
+        if (!$validate) return redirect()->back()->withInput();
+
+        $imageName = null;
+
+        if ($image = $this->request->getFile('order_image')) {
+            if ($image->isValid() && !$image->hasMoved()) {
+                $imageName = $image->getRandomName();
+
+                $image->move(ROOTPATH . 'public/uploads', $imageName);
+            }
+        }
+
+        $this->orderService->save([
+            'order_id' => $id,
+            'title' => $request['title'],
+            'order_comment' => $request['additional_description'],
+            'price' => $request['additional_price'],
+            'order_image' => $imageName,
+        ]);
+
+        return redirect()->back()->with('success', 'Berhasil menambahkan layanan tambahan');
+    }
+
+    public function updateServices($id)
+    {
+        $validation = \Config\Services::validation();
+
+        $validate = $this->validate([
+            'order_comment.*' => 'required',
+            'price.*' => 'required',
+        ]);
+
+        $request = $this->request->getPost();
+
+        if (!$validate) return redirect()->back()->withInput();
+        foreach ($request['order_service_id'] as $key => $id) {
+            $this->orderService->where('order_service_id', $id)->set([
+                'order_comment' => $request['order_comment'][$key],
+                'price' => $request['price'][$key],
+            ])->update();
+        }
+
+        return redirect()->back()->with('success', 'Berhasil mengubah rincian layanan');
+    }
 }
